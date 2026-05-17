@@ -1,36 +1,52 @@
 import './App.css';
-import LiquidEther from './components/LiquidEther/LiquidEther';
+import GooeyNav from './components/GooeyNav/GooeyNav';
+import Prism from './components/Prism/Prism';
+import Hero from './sections/Hero';
+import About from './sections/About';
+import DarkVeil from './components/DarkVeil/DarkVeil';
 
 function App() {
+  const navItems = [
+    { label: "Home", href: "#" },
+    { label: "Project", href: "#" },
+    { label: "Contact", href: "#" },
+  ];
+
+
+
   return (
     <div className="app-container">
       {/* Background layer: Interactive LiquidEther background */}
       <div className="background-layer">
-        <LiquidEther
-          colors={[ '#5227FF', '#FF9FFC', '#B497CF' ]}
-          mouseForce={20}
-          cursorSize={100}
-          isViscous={false}
-          viscous={30}
-          iterationsViscous={32}
-          iterationsPoisson={32}
-          resolution={0.5}
-          isBounce={false}
-          autoDemo={true}
-          autoSpeed={0.5}
-          autoIntensity={2.2}
-          takeoverDuration={0.25}
-          autoResumeDelay={3000}
-          autoRampDuration={0.6}
+        <DarkVeil
+          hueShift={0}
+          noiseIntensity={0}
+          scanlineIntensity={0}
+          speed={0.5}
+          scanlineFrequency={0}
+          warpAmount={0}
         />
       </div>
 
-      {/* Content layer: Foreground text and elements */}
+      {/* Content layer: Foreground elements */}
       <div className="content-layer">
-        <div className="portfolio-header">
-          <h1>Amal Varghese</h1>
-          <p>Creative Developer & Designer</p>
-        </div>
+        {/* Navigation Bar */}
+        <header className="navbar-wrapper">
+          <GooeyNav
+            items={navItems}
+            particleCount={15}
+            particleDistances={[90, 10]}
+            particleR={100}
+            initialActiveIndex={0}
+            animationTime={600}
+            timeVariance={300}
+            colors={[1, 2, 3, 1, 2, 3, 1, 4]}
+          />
+        </header>
+
+        {/* Main Center Content */}
+        <Hero />
+        <About />
       </div>
     </div>
   );

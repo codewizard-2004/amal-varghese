@@ -1,0 +1,137 @@
+.about-section {
+  width: 100%;
+  padding: 5rem 10%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem;
+  pointer-events: auto;
+  /* Required to interact with the SpotlightCard */
+}
+
+.about-card,
+.education-card,
+.experience-card {
+  flex: 1;
+  min-width: 300px;
+  /* Override default SpotlightCard background to match glassmorphic style */
+  background: rgba(20, 20, 20, 0.4) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.about-card,
+.education-card {
+  max-width: 800px;
+}
+
+.experience-card {
+  flex-basis: 100%;
+  max-width: 1000px;
+}
+
+.about-content {
+  color: #e2e2e2;
+  font-family: 'Inter', sans-serif;
+  z-index: 1;
+  /* To stay above spotlight */
+  position: relative;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #ffffff, #a8a8a8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.about-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+.about-text:last-child {
+  margin-bottom: 0;
+}
+
+.education-content {
+  color: #e2e2e2;
+  font-family: 'Inter', sans-serif;
+  z-index: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+}
+
+.education-header {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+}
+
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.education-item {
+  display: flex;
+  align-items: center;
+  background: rgba(10, 10, 10, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 1rem;
+  transition: background 0.2s ease;
+}
+
+.education-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.education-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.education-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.education-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+}
+
+.education-subtitle {
+  font-size: 0.9rem;
+  color: #888888;
+}
