@@ -3,13 +3,15 @@ import GooeyNav from './components/GooeyNav/GooeyNav';
 import Prism from './components/Prism/Prism';
 import Hero from './sections/Hero';
 import About from './sections/About';
+import Projects from './sections/Projects';
+import Contact from './sections/Contact';
 import DarkVeil from './components/DarkVeil/DarkVeil';
 
 function App() {
   const navItems = [
     { label: "Home", href: "#" },
-    { label: "Project", href: "#" },
-    { label: "Contact", href: "#" },
+    { label: "Project", href: "#projects" },
+    { label: "Contact", href: "#contact" },
   ];
 
 
@@ -47,6 +49,8 @@ function App() {
         {/* Main Center Content */}
         <Hero />
         <About />
+        <Projects />
+        <Contact />
       </div>
     </div>
   );
