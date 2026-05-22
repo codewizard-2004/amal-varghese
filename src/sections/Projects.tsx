@@ -65,39 +65,39 @@ const projects = [
     tags: ["React Native", "Django", "pytorch", "supabase"],
     githubUrl: "https://github.com/krishnanx/Vitalia.ai"
   },
-  {
-    id: "6",
-    img: "https://picsum.photos/id/1035/600/850?grayscale",
-    url: "#",
-    height: 500,
-    title: "Portfolio Template",
-    description: "An open-source, highly customizable portfolio template designed for developers and designers to showcase their work effortlessly.",
-    tags: ["HTML", "CSS", "Vanilla JS"],
-    githubUrl: "https://github.com/codewizard-2004",
-    demoUrl: "#"
-  },
-  {
-    id: "7",
-    img: "https://picsum.photos/id/1043/600/600?grayscale",
-    url: "#",
-    height: 300,
-    title: "Real-time Chat Application",
-    description: "A real-time messaging application supporting private chats, group channels, read receipts, and media sharing.",
-    tags: ["React", "Socket.io", "Redux", "Express"],
-    githubUrl: "https://github.com/codewizard-2004",
-    demoUrl: "#"
-  },
-  {
-    id: "8",
-    img: "https://picsum.photos/id/1045/600/800?grayscale",
-    url: "#",
-    height: 550,
-    title: "AI Image Generator Interface",
-    description: "A clean interface interacting with stable diffusion APIs to generate images from text prompts, featuring a gallery of generated creations.",
-    tags: ["React", "Zustand", "Tailwind CSS"],
-    githubUrl: "https://github.com/codewizard-2004",
-    demoUrl: "#"
-  }
+  // {
+  //   id: "6",
+  //   img: "https://picsum.photos/id/1035/600/850?grayscale",
+  //   url: "#",
+  //   height: 500,
+  //   title: "Portfolio Template",
+  //   description: "An open-source, highly customizable portfolio template designed for developers and designers to showcase their work effortlessly.",
+  //   tags: ["HTML", "CSS", "Vanilla JS"],
+  //   githubUrl: "https://github.com/codewizard-2004",
+  //   demoUrl: "#"
+  // },
+  // {
+  //   id: "7",
+  //   img: "https://picsum.photos/id/1043/600/600?grayscale",
+  //   url: "#",
+  //   height: 300,
+  //   title: "Real-time Chat Application",
+  //   description: "A real-time messaging application supporting private chats, group channels, read receipts, and media sharing.",
+  //   tags: ["React", "Socket.io", "Redux", "Express"],
+  //   githubUrl: "https://github.com/codewizard-2004",
+  //   demoUrl: "#"
+  // },
+  // {
+  //   id: "8",
+  //   img: "https://picsum.photos/id/1045/600/800?grayscale",
+  //   url: "#",
+  //   height: 550,
+  //   title: "AI Image Generator Interface",
+  //   description: "A clean interface interacting with stable diffusion APIs to generate images from text prompts, featuring a gallery of generated creations.",
+  //   tags: ["React", "Zustand", "Tailwind CSS"],
+  //   githubUrl: "https://github.com/codewizard-2004",
+  //   demoUrl: "#"
+  // }
 ];
 
 const Projects: React.FC = () => {
