@@ -4,12 +4,17 @@ import TextPressure from '../components/TextPressure/TextPressure';
 import LogoLoop from '../components/LogoLoop/LogoLoop';
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiFastapi, SiLanggraph, SiDocker, SiMysql, SiGooglecolab, SiLangchain, SiPytorch, SiExpress } from 'react-icons/si';
 
+import amalImg1 from '../assets/amal.jpeg';
+import amalImg2 from '../assets/amal2.jpeg';
+import amalImg3 from '../assets/amal3.jpeg';
+import amalImg4 from '../assets/amal4.jpeg';
+
 const Hero = () => {
   const images = [
-    "src/assets/amal.jpeg",
-    "src/assets/amal2.jpeg",
-    "src/assets/amal3.jpeg",
-    "src/assets/amal4.jpeg"
+    amalImg1,
+    amalImg2,
+    amalImg3,
+    amalImg4
   ];
 
   const techLogos = [

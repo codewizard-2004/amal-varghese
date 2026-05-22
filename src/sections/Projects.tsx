@@ -3,10 +3,16 @@ import Masonry from '../components/Masonry/Masonry';
 import ProjectModal from '../components/ProjectModal/ProjectModal';
 import './Projects.css';
 
+import expenseTrackerImg from '../assets/projects/expense-tracker.jpeg';
+import foodnetImg from '../assets/projects/foodnet.png';
+import epistulaImg from '../assets/projects/epistula.png';
+import bookbridgeImg from '../assets/projects/bookbridge.png';
+import vitaliaImg from '../assets/projects/vitalia.png';
+
 const projects = [
   {
     id: "1",
-    img: "/src/assets/projects/expense-tracker.jpeg",
+    img: expenseTrackerImg,
     url: "#",
     height: 400,
     title: "Expense Tracker",
@@ -18,7 +24,7 @@ const projects = [
 
   {
     id: "2",
-    img: "/src/assets/projects/foodnet.png",
+    img: foodnetImg,
     url: "#",
     height: 250,
     title: "FoodNet",
@@ -29,7 +35,7 @@ const projects = [
   },
   {
     id: "3",
-    img: "/src/assets/projects/epistula.png",
+    img: epistulaImg,
     url: "#",
     height: 500,
     title: "Epistula AI",
@@ -40,7 +46,7 @@ const projects = [
   },
   {
     id: "4",
-    img: "/src/assets/projects/bookbridge.png",
+    img: bookbridgeImg,
     url: "#",
     height: 350,
     title: "BookBridge",
@@ -51,7 +57,7 @@ const projects = [
   },
   {
     id: "5",
-    img: "/src/assets/projects/vitalia.png",
+    img: vitaliaImg,
     url: "#",
     height: 450,
     title: "Vitalia AI",
