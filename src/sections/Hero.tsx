@@ -1,10 +1,8 @@
-import React from 'react';
 import './Hero.css';
 import Stack from '../components/Stack/Stack';
 import TextPressure from '../components/TextPressure/TextPressure';
 import LogoLoop from '../components/LogoLoop/LogoLoop';
-import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiPython, SiFastapi, SiLanggraph, SiDocker, SiMysql, SiGooglecolab, SiLangchain, SiPytorch, SiExpress } from 'react-icons/si';
-import { title } from 'motion/react-client';
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiFastapi, SiLanggraph, SiDocker, SiMysql, SiGooglecolab, SiLangchain, SiPytorch, SiExpress } from 'react-icons/si';
 
 const Hero = () => {
   const images = [
@@ -30,7 +28,7 @@ const Hero = () => {
   ];
 
   return (
-    <main className="hero-main">
+    <main className="hero-main" id="home">
       {/* Left Side: Hero Text */}
       <div className="hero-content">
         <div className="hero-text-container">

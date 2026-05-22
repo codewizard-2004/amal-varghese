@@ -1,6 +1,5 @@
-import React from 'react';
 import SpotlightCard from '../components/SpotlightCard/SpotlightCard';
-import { SiLinear, SiVercel, SiStripe, SiFigma, SiNotion, SiAirbnb, SiIledefrancemobilites } from 'react-icons/si';
+import { SiLinear, SiIledefrancemobilites } from 'react-icons/si';
 import './About.css';
 import { BiSolidWrench } from 'react-icons/bi';
 
@@ -11,13 +10,13 @@ const About = () => {
         <div className="about-content">
           <h2 className="about-title">Hello! I’m Amal Varghese.</h2>
           <p className="about-text">
-            A product designer and frontend engineer passionate about building intuitive, human-centered digital experiences. With a background in visual craft and interaction design, I bring a unique blend of design thinking and technical execution to every project.
+            A Software Engineering student with a passion for building intuitive, human-centered digital experiences. With a strong foundation in AI and Machine Learning, I bring a unique blend of design thinking and technical execution to every project.
           </p>
           <p className="about-text">
-            My journey into design began when I realized how often good user experience was missing from powerful tools. That led me to embrace user-centered design as both a mindset and a craft, one that balances clarity, creativity, and functionality.
+            My journey began when I realized how often good user experience was missing from powerful tools. That led me to embrace user-centered design as both a mindset and a craft, one that balances clarity, creativity, and functionality.
           </p>
           <p className="about-text">
-            Currently leading design at small product teams shipping software for creative professionals, I’m always looking for opportunities to shape thoughtful interfaces and build scalable design systems.
+            I’m currently exploring the intersection of AI and product design, driven by the belief that thoughtful interfaces can make complex technology feel simple and empowering.
           </p>
         </div>
       </SpotlightCard>

@@ -193,7 +193,7 @@ const Masonry: React.FC<MasonryProps> = ({
     hasMounted.current = true;
   }, [grid, imagesReady, stagger, animateFrom, blurToFocus, duration, ease]);
 
-  const handleMouseEnter = (e: React.MouseEvent, item: GridItem) => {
+  const handleMouseEnter = (e: React.MouseEvent) => {
     const element = e.currentTarget as HTMLElement;
 
     if (scaleOnHover) {
@@ -215,7 +215,7 @@ const Masonry: React.FC<MasonryProps> = ({
     }
   };
 
-  const handleMouseLeave = (e: React.MouseEvent, item: GridItem) => {
+  const handleMouseLeave = (e: React.MouseEvent) => {
     const element = e.currentTarget as HTMLElement;
 
     if (scaleOnHover) {
@@ -246,8 +246,8 @@ const Masonry: React.FC<MasonryProps> = ({
             data-key={item.id}
             className="item-wrapper"
             onClick={() => onItemClick ? onItemClick(item) : window.open(item.url, '_blank', 'noopener')}
-            onMouseEnter={e => handleMouseEnter(e, item)}
-            onMouseLeave={e => handleMouseLeave(e, item)}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
           >
             <div className="item-img" style={{ backgroundImage: `url(${item.img})` }}>
               {colorShiftOnHover && (

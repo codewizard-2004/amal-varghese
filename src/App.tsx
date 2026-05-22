@@ -1,17 +1,19 @@
 import './App.css';
+// @ts-ignore
 import GooeyNav from './components/GooeyNav/GooeyNav';
-import Prism from './components/Prism/Prism';
 import Hero from './sections/Hero';
 import About from './sections/About';
 import Projects from './sections/Projects';
 import Contact from './sections/Contact';
 import DarkVeil from './components/DarkVeil/DarkVeil';
+import { FiHome, FiUser, FiBriefcase, FiMail } from 'react-icons/fi';
 
 function App() {
   const navItems = [
-    { label: "Home", href: "#" },
-    { label: "Project", href: "#projects" },
-    { label: "Contact", href: "#contact" },
+    { label: "Home", href: "#home", icon: <FiHome /> },
+    { label: "About", href: "#about", icon: <FiUser /> },
+    { label: "Projects", href: "#projects", icon: <FiBriefcase /> },
+    { label: "Contact", href: "#contact", icon: <FiMail /> },
   ];
 
 

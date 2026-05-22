@@ -25,7 +25,7 @@ const projects = [
     description: "Implementation of Different CNN architectures using PyTorch/ONNX and RAG using Langchain",
     tags: ["next.js", "FastAPI", "Langchain", "pytorch", "onnx", "supabase"],
     githubUrl: "https://github.com/codewizard-2004/FoodNet",
-    demoUrl: "#"
+    demoUrl: "https://food-net-t29k.vercel.app/"
   },
   {
     id: "3",
@@ -45,7 +45,7 @@ const projects = [
     height: 350,
     title: "BookBridge",
     description: "Mobile-first reading companion that blends personalized tracking, social engagement, and AI-assisted recommendations so readers can set goals, stay motivated, and resume across devices with real-time progress sync.",
-    tags: ["React", "PWA", "Framer Motion"],
+    tags: ["React Native", "Supabase", "postgresql"],
     githubUrl: "https://github.com/codewizard-2004/BookBridge",
     demoUrl: "#"
   },
@@ -57,7 +57,7 @@ const projects = [
     title: "Vitalia AI",
     description: "Vitalia.ai is a mobile app designed to empower Indian consumers by providing transparency and personalized insights into food and cosmetic products.",
     tags: ["React Native", "Django", "pytorch", "supabase"],
-    githubUrl: "https://github.com/codewizard-2004/Vitalia.ai"
+    githubUrl: "https://github.com/krishnanx/Vitalia.ai"
   },
   {
     id: "6",

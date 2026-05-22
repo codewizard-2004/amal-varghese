@@ -90,11 +90,21 @@ const GooeyNav = ({
     };
     Object.assign(filterRef.current.style, styles);
     Object.assign(textRef.current.style, styles);
-    textRef.current.innerText = element.innerText;
+    textRef.current.innerHTML = element.innerHTML;
   };
 
+  const isScrollingRef = useRef(false);
+  const scrollTimeoutRef = useRef(null);
+
   const handleClick = (e, index) => {
-    const liEl = e.currentTarget;
+    if (e && e.preventDefault) {
+      e.preventDefault();
+    }
+
+    const target = e.currentTarget;
+    const liEl = target.tagName === 'LI' ? target : target.closest('li');
+    if (!liEl) return;
+
     if (activeIndex === index) return;
 
     setActiveIndex(index);
@@ -115,6 +125,28 @@ const GooeyNav = ({
     if (filterRef.current) {
       makeParticles(filterRef.current);
     }
+
+    // Scroll to section
+    const item = items[index];
+    if (item && item.href) {
+      const targetId = item.href === '#' ? '#home' : item.href;
+      const targetElement = document.querySelector(targetId);
+
+      isScrollingRef.current = true;
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+
+      if (targetId === '#home') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
+
+      scrollTimeoutRef.current = setTimeout(() => {
+        isScrollingRef.current = false;
+      }, 1000);
+    }
   };
 
   const handleKeyDown = (e, index) => {
@@ -122,10 +154,72 @@ const GooeyNav = ({
       e.preventDefault();
       const liEl = e.currentTarget.parentElement;
       if (liEl) {
-        handleClick({ currentTarget: liEl }, index);
+        handleClick({ currentTarget: liEl, preventDefault: () => {} }, index);
       }
     }
   };
+
+  // Scroll spy effect
+  useEffect(() => {
+    if (!items || items.length === 0) return;
+
+    let ticking = false;
+
+    const handleScroll = () => {
+      if (isScrollingRef.current) return;
+
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (isScrollingRef.current) {
+            ticking = false;
+            return;
+          }
+
+          // If user reaches the absolute bottom of the page, force highlight the last item (Contact)
+          if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 50) {
+            const lastIndex = items.length - 1;
+            if (activeIndex !== lastIndex) {
+              setActiveIndex(lastIndex);
+            }
+            ticking = false;
+            return;
+          }
+
+          // Check which section is currently centered in the viewport
+          const viewportCenter = window.innerHeight / 3;
+          let currentSectionIndex = -1;
+
+          items.forEach((item, index) => {
+            const targetId = item.href === '#' ? '#home' : item.href;
+            const el = document.querySelector(targetId);
+            if (el) {
+              const rect = el.getBoundingClientRect();
+              if (rect.top <= viewportCenter && rect.bottom >= viewportCenter) {
+                currentSectionIndex = index;
+              }
+            }
+          });
+
+          if (currentSectionIndex !== -1 && currentSectionIndex !== activeIndex) {
+            setActiveIndex(currentSectionIndex);
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    // Initial check on mount
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+    };
+  }, [items, activeIndex]);
 
   useEffect(() => {
     if (!navRef.current || !containerRef.current) return;
@@ -153,7 +247,8 @@ const GooeyNav = ({
           {items.map((item, index) => (
             <li key={index} className={activeIndex === index ? 'active' : ''}>
               <a href={item.href} onClick={e => handleClick(e, index)} onKeyDown={e => handleKeyDown(e, index)}>
-                {item.label}
+                {item.icon && <span className="nav-icon">{item.icon}</span>}
+                <span className="nav-label">{item.label}</span>
               </a>
             </li>
           ))}

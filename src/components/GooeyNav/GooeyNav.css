@@ -61,7 +61,8 @@
   color: white;
 }
 
-.gooey-nav-container nav ul li a {
+.gooey-nav-container nav ul li a,
+.gooey-nav-container .effect.text a {
   display: inline-block;
   padding: 0.6em 1em;
   text-decoration: none;
@@ -228,5 +229,31 @@
   100% {
     transform: scale(0);
     opacity: 0;
+  }
+}
+
+.nav-icon {
+  display: none;
+}
+
+.nav-label {
+  display: inline;
+}
+
+@media (max-width: 768px) {
+  .nav-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+  }
+
+  .nav-label {
+    display: none;
+  }
+
+  .gooey-nav-container nav ul {
+    gap: 1em;
+    padding: 0 0.5em;
   }
 }
