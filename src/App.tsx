@@ -157,22 +157,22 @@ function App() {
         />
       </div>
 
+      {/* Navigation Bar */}
+      <header className="navbar-wrapper">
+        <GooeyNav
+          items={navItems}
+          particleCount={15}
+          particleDistances={[90, 10]}
+          particleR={100}
+          initialActiveIndex={0}
+          animationTime={600}
+          timeVariance={300}
+          colors={[1, 2, 3, 1, 2, 3, 1, 4]}
+        />
+      </header>
+
       {/* Content layer: Foreground elements */}
       <div className="content-layer">
-        {/* Navigation Bar */}
-        <header className="navbar-wrapper">
-          <GooeyNav
-            items={navItems}
-            particleCount={15}
-            particleDistances={[90, 10]}
-            particleR={100}
-            initialActiveIndex={0}
-            animationTime={600}
-            timeVariance={300}
-            colors={[1, 2, 3, 1, 2, 3, 1, 4]}
-          />
-        </header>
-
         {/* Main Center Content */}
         <Hero />
         <About />
